@@ -25,7 +25,7 @@ body {
   border: 1px solid white;
 }
 img {
-  object-fit: contain;
+  object-fit: fill;
 }
 
 #controls,
