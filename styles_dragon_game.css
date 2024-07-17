@@ -16,6 +16,13 @@ body {
   margin: 30px auto 0px;
   padding: 10px;
 }
+#bgImg {
+  max-width: 600px;
+  margin: 30px auto 0px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid white;
+}
 
 #controls,
 #stats {
