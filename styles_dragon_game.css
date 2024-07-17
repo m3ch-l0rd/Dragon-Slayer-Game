@@ -18,6 +18,7 @@ body {
 }
 #bgImg {
   max-width: 600px;
+  max-height: 600px;
   margin: 30px auto 0px;
   padding: 10px;
   border-radius: 5px;
