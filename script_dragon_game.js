@@ -6,6 +6,8 @@ let fighting;
 let monsterHealth;
 let inventory = ["stick"];
 
+var img = document.getElementById("#img");
+
 const button1 = document.querySelector('#button1');
 const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
@@ -16,6 +18,7 @@ const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
+// const img = document.querySelector("#img");
 const weapons = [
   { name: 'stick', power: 5 },
   { name: 'dagger', power: 30 },
@@ -44,31 +47,33 @@ const locations = [
     name: "town square",
     "button text": ["Go to store", "Go to cave", "Fight dragon"],
     "button functions": [goStore, goCave, fightDragon],
-    text: "You are in the town square. You see a sign that says \"Store\"."
+    text: "You are in the town square. You see a sign that says \"Store\", a trail going into the forest marked \"Cave\". There is the Mt Road where a dragon is said to terrorize and eat travelers. .."
+    
   },
   {
     name: "store",
     "button text": ["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Go to town square"],
     "button functions": [buyHealth, buyWeapon, goTown],
-    text: "You enter the store."
+    text: "You enter the store. Health potions are for sale and there is a craftsman offering weapons."
   },
   {
     name: "cave",
     "button text": ["Fight slime", "Fight fanged beast", "Go to town square"],
     "button functions": [fightSlime, fightBeast, goTown],
-    text: "You enter the cave. You see some monsters."
+    text: " After hiking down the trail. You enter the cave. Towns people claim two types of monsters occupy this caves. The Slime and the Fanged Beast, the latter being more dangerous."
+    //*img: src=docs/assets/images/cave.jpg
   },
   {
     name: "fight",
     "button text": ["Attack", "Dodge", "Run"],
     "button functions": [attack, dodge, goTown],
-    text: "You are fighting a monster."
+    text: "You are fighting monster!"
   },
   {
     name: "kill monster",
     "button text": ["Go to town square", "Go to town square", "Go to town square"],
     "button functions": [goTown, goTown, easterEgg],
-    text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
+    text: 'The monster screams "Arg!" as it dies. You gain experience points and the towns people award you some gold.'
   },
   {
     name: "lose",
@@ -86,7 +91,7 @@ const locations = [
     name: "easter egg",
     "button text": ["2", "8", "Go to town square?"],
     "button functions": [pickTwo, pickEight, goTown],
-    text: "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!"
+    text: "On the way back to town, a mysterious wizard makes you a bet. \"Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win! IF YOU LOSE I WILL TAKE SOME OF YOUR HEALTH.\" "
   }
 ];
 
@@ -104,18 +109,23 @@ function update(location) {
   button2.onclick = location["button functions"][1];
   button3.onclick = location["button functions"][2];
   text.innerHTML = location.text;
+  //*img.?
 }
 
 function goTown() {
   update(locations[0]);
+  document.getElementById("img").src = "docs/assets/images/townSquare.jpg";
 }
 
 function goStore() {
   update(locations[1]);
+  document.getElementById("img").src = "docs/assets/images/shop.jpg";
 }
 
 function goCave() {
   update(locations[2]);
+  //img.src = "docs/assets/images/cave.jpg"
+  document.getElementById("img").src = "docs/assets/images/cave.jpg";
 }
 
 function buyHealth() {
@@ -164,16 +174,19 @@ function sellWeapon() {
 function fightSlime() {
   fighting = 0;
   goFight();
+  document.getElementById("img").src = "docs/assets/images/slime.jpg";
 }
 
 function fightBeast() {
   fighting = 1;
   goFight();
+  document.getElementById("img").src = "docs/assets/images/fangedbeast.jpg";
 }
 
 function fightDragon() {
   fighting = 2;
   goFight();
+  document.getElementById("img").src = "docs/assets/images/dragon.jpg";
 }
 
 function goFight() {
@@ -238,6 +251,7 @@ function lose() {
 
 function winGame() {
   update(locations[6]);
+  document.getElementById("img").src = "docs/assets/images/heroWin.jpg";
 }
 
 function restart() {
