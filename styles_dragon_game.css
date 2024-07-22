@@ -7,6 +7,12 @@ body {
   color: #ffffff;
   padding: 10px;
 }
+#page {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+}
 
 #game {
   max-width: 600px;
@@ -28,6 +34,29 @@ img {
   object-fit: fill;
   height: 600px;
   width: 600px;
+}
+#experimentalcolumnA, #experimentalcolumnB {
+	color: #ffffff;
+	max-width: 300px;
+	padding: 10px;
+	margin: auto;
+	border: 1px solid #ffffff;
+	border-radius: 5px;
+}
+#experimentalcolumnA {
+	transform: rotate(-90deg);
+
+}
+#experimentalcolumnB {
+	
+	padding: 10px;
+	/*margin: 30px auto aut0;*/
+	
+}
+.Dtext {
+	color: #ffffff;
+	font-size: 60px;
+	/*transform: rotate(90deg); */
 }
 
 #controls,
@@ -55,4 +84,9 @@ button {
   background-color: #feac32;
   background-image: linear-gradient(#fecc4c, #ffac33);
   border: 3px solid #feac32;
+}
+
+a {
+	color: #7fff00;
+	
 }
