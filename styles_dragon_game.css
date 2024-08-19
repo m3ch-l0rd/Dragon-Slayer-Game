@@ -102,4 +102,7 @@ a {
 	transform: initial;
 	max-width: 600px;
 }
+#experimentalcolumnB {
+	max-width: 600px;
+	margin: 10px auto;
 }
